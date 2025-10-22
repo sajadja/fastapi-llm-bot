@@ -1,0 +1,14 @@
+services:
+
+  fastapi:
+    build:
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 8000:8000
+    # volumes:
+    #   - ./static-volume:/app/static 
+    #   - ./media-volume:/app/media
+    # env_file:
+    #   - ../src/config/env/.env
+    command:
+      - ./entrypoint.sh
