@@ -5,9 +5,8 @@ services:
       dockerfile: ./docker/Dockerfile
     ports:
       - 8000:8000
-    # volumes:
-    #   - ./static-volume:/app/static 
-    #   - ./media-volume:/app/media
+    volumes:
+      - ./db:/db/
     # env_file:
     #   - ../src/config/env/.env
     command:

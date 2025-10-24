@@ -1,8 +1,9 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 
-DATABASE_URL = "sqlite:///./SQLite.db"
+DATABASE_URL = "sqlite:///./db/app_data.sqlite"
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -22,17 +23,7 @@ def get_db():
 
 def init_db():
     '''
-    initialize database and create tables
+    create db folder and create tables in database
     '''
+    os.makedirs("db", exist_ok=True)
     Base.metadata.create_all(bind=engine)
-    # session = SessionLocal()
-
-    # # insert sample data
-    # if not session.query(Product).first():
-    #     with open("product/sample_data.json", "r") as f:
-    #         data = json.load(f)
-    #     objects = [Product(**item) for item in data]
-    #     session.add_all(objects)
-    #     session.commit()
-
-    # session.close()
