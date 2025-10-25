@@ -1,10 +1,10 @@
 from google import genai
+from src.config import settings
 
 
 class GeminiClient:
     def __init__(self):
-        # The client gets the API key from the environment variable `GEMINI_API_KEY`.
-        self.client = genai.Client()
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
     def generate_response(self, prompt: str):
         response = self.client.models.generate_content(

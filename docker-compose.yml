@@ -8,6 +8,6 @@ services:
     volumes:
       - ./db:/db/
     # env_file:
-    #   - ../src/config/env/.env
+    #   - .env
     command:
       - ./entrypoint.sh
