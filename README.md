@@ -1,10 +1,10 @@
 # پروژه ربات پاسخگویی دایرکت
 
 ## فایل `.env`:
-قبل از اجرا در روت پروژه یک فایل با نام .env و با مقادیر زیر ایجاد کنید (قسمت your_api_key را با کلید api گوگل gemini خود جایگزین کنید):
+قبل از اجرا در روت پروژه یک فایل با نام .env و با مقادیر زیر ایجاد کنید (مقدار GEMINI_API_KEY را میتوانید با کلید api گوگل gemini خود جایگزین کنید):
 ```
 DATABASE_URL=sqlite:///./db/app_data.sqlite
-GEMINI_API_KEY={your_api_key}
+GEMINI_API_KEY=AIzaSyBCIWhTDjOWG7QMZ8GyheUA_4o_JQdoWQQ123
 ```
 
 ## نحوه اجرا:
