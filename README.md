@@ -17,6 +17,7 @@ docker compose up --build
 - این پروژه به صورت بسیار ساده و مینیمال پیاده سازی شده و صرفا برای ارزیابی کیفیت کد زنی قابل استفاده است. (مثلا سرچ محصولات در فایل rag.py بهتر است از embeding ها استفاده کند.)
 - برای اینکه فایل دیتابیس روی گیت نیاید هنگام اجرای پروژه در ادرس db/app_data.sqlite ساخته میشود و حدود 100 دیتای تست در آن وارد میشود.
 - ساختار پروژه از ریپوزیتوری https://github.com/zhanymkanov/fastapi-best-practices که شامل best practice های fastapi است، الهام گرفته شده.
+- چون سرویس gemini تحریم است قبل از استفاده از یک تحریم شکن استفاده کنید.
 - تصاویر تست:
 
 <img width="1228" height="416" alt="Pasted image" src="https://github.com/user-attachments/assets/20d5c173-7fbd-4969-a4c3-6713bec976d6" />
