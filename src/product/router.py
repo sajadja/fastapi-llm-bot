@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from src.database import get_db
 from .models import Product
 from .rag import RAGSystem
+from src.gemini.client import GeminiClient
 
 router = APIRouter(
     prefix="/product",
@@ -22,6 +23,7 @@ async def db_data(db: Session = Depends(get_db)):
 
 @router.post('/simulate_dm', response_model=BotResponse)
 async def simulate_dm(user_message: UserMessage):
-   rag = RAGSystem()
-   answer = await rag.generate_answer(user_message.text)
-   return answer
+    gemini = GeminiClient()
+    rag = RAGSystem(ai_model=gemini)
+    answer = rag.generate_answer(user_message.text)
+    return {'reply': answer}
